@@ -24,7 +24,7 @@ public class Main extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         createConfig();
-        new JoinSpawnHandler(this); // Instantiate the JoinSpawnHandler
+        new JoinSpawnHandler(this);
         getLogger().info("XyrisWarps has been enabled!");
 
         getCommand("createwarp").setExecutor(this);
@@ -138,13 +138,13 @@ public class Main extends JavaPlugin implements Listener {
                 double z = config.getDouble("warps." + arenaName + ".coords.z");
                 float yaw = (float) config.getDouble("warps." + arenaName + ".yaw");
                 float pitch = (float) config.getDouble("warps." + arenaName + ".pitch");
-                String worldName = config.getString("warps." + arenaName + ".world"); // Retrieve the world name
+                String worldName = config.getString("warps." + arenaName + ".world");
 
                 World targetWorld = getServer().getWorld(worldName);
                 if (targetWorld != null) {
                     Player targetPlayer = getServer().getPlayer(playerName);
                     if (targetPlayer != null) {
-                        targetPlayer.teleport(new Location(targetWorld, x, y, z, yaw, pitch)); // Use the retrieved world
+                        targetPlayer.teleport(new Location(targetWorld, x, y, z, yaw, pitch));
                         sender.sendMessage("§aTeleported " + targetPlayer.getName() + " to warp '" + arenaName + "'!");
                     } else {
                         sender.sendMessage("§cPlayer '" + playerName + "' is not online.");
@@ -201,11 +201,9 @@ public class Main extends JavaPlugin implements Listener {
                 Location respawnLoc = new Location(world, x, y, z, yaw, pitch);
                 event.setRespawnLocation(respawnLoc);
             } else {
-                // Handle the case where the world does not exist
                 getLogger().warning("§cWorld '" + worldName + "' does not exist!");
             }
         } else {
-            // Handle the case where coordinates or world are not found in the configuration
             getLogger().warning("§cSpawn coordinates or world not found in configuration!");
         }
     }
@@ -230,7 +228,6 @@ public class Main extends JavaPlugin implements Listener {
                     completions.addAll(warpNames);
                 }
             } else if (args.length == 2) {
-                // You can add online player names here if needed
                 for (Player player : Bukkit.getOnlinePlayers()) {
                     completions.add(player.getName());
                 }
