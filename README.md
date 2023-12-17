@@ -51,4 +51,4 @@ Fine-tune plugin behavior through the `config.yml` file:
 # config.yml
 
 # Teleport players to spawn on join (true/false)
-on-join-spawn: false
+on-join-spawn: true
