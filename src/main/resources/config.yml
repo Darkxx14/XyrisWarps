@@ -1,0 +1,4 @@
+# config.yml
+
+# Setting whether to teleport players to spawn on join
+on-join-spawn: true  # This value can be true or false

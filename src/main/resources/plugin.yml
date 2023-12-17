@@ -1,0 +1,30 @@
+name: XyrisWarps
+version: '1.0'
+main: xyris.darkxx.xyriswarps.Main
+api-version: '1.19'
+author: Darkxx
+website: darkxx.xyz
+prefix: as-xyris-fun
+commands:
+  createwarp:
+    description: Create a warp
+    permission: xyriswarps.createwarp
+  deletewarp:
+    description: Delete a warp
+    permission: xyriswarps.deletewarp
+  warp:
+    description: Teleport to a warp
+    permission: xyriswarps.usewarp
+  setspawn:
+    description: Set the spawn point
+    permission: xyriswarps.setspawn
+
+permissions:
+  xyriswarps.createwarp:
+    description: Permission to create a warp
+  xyriswarps.deletewarp:
+    description: Permission to delete a warp
+  xyriswarps.usewarp:
+    description: Permission to use a warp
+  xyriswarps.setspawn:
+    description: Permission to set the death spawn loacation
